@@ -46,9 +46,6 @@ script = ExtResource("1_ud24k")
 position = Vector2(3.5, -94.5)
 shape = SubResource("RectangleShape2D_pm6tg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(433, -175)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -112)
 sprite_frames = SubResource("SpriteFrames_aia73")
