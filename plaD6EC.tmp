@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0ai35h1gxajb"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_4v7g4"]
+[ext_resource type="Texture2D" uid="uid://clgqunv57hogy" path="res://1.png" id="2_r6qhy"]
+[ext_resource type="Texture2D" uid="uid://kyisfo5vqx65" path="res://2.png" id="3_rwxc8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30rsk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r6qhy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r6qhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rwxc8")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg1pp"]
+size = Vector2(105, 189)
+
+[node name="Scene" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(2, -100)
+script = ExtResource("1_4v7g4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(107, 537)
+sprite_frames = SubResource("SpriteFrames_30rsk")
+animation = &"Move"
+
+[node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2(107, 649)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(3.5, -94.5)
+shape = SubResource("RectangleShape2D_gg1pp")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(576, 325)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 549.0
+offset_right = 1152.0
+offset_bottom = 648.0
