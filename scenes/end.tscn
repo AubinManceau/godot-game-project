@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd1u67h45smoj"]
+
+[ext_resource type="Texture2D" uid="uid://o26f7huk5rue" path="res://sprites/level-design-end-06.png" id="1_ikcyp"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_38tul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw0rb"]
+size = Vector2(1, 0.726)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxk5m"]
+size = Vector2(10, 569)
+
+[node name="End" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-332, 125)
+scale = Vector2(663, -500)
+mesh = SubResource("QuadMesh_38tul")
+texture = ExtResource("1_ikcyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-331.5, 192.5)
+scale = Vector2(663, -500)
+shape = SubResource("RectangleShape2D_qw0rb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(5, -274.5)
+shape = SubResource("RectangleShape2D_mxk5m")

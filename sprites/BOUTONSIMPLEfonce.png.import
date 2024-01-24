@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gim53fvcuxiw"
-path="res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"
+uid="uid://bubucj6uv3wfe"
+path="res://.godot/imported/BOUTONSIMPLEfonce.png-99906c0d7e6c1197f90d900c0f1b386d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Move1.png"
-dest_files=["res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"]
+source_file="res://sprites/BOUTONSIMPLEfonce.png"
+dest_files=["res://.godot/imported/BOUTONSIMPLEfonce.png-99906c0d7e6c1197f90d900c0f1b386d.ctex"]
 
 [params]
 

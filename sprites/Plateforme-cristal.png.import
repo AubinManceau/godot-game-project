@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gim53fvcuxiw"
-path="res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"
+uid="uid://dvix8g5yh0o82"
+path="res://.godot/imported/Plateforme-cristal.png-74f4cbd3287a59a168e8105c648c1694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Move1.png"
-dest_files=["res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"]
+source_file="res://sprites/Plateforme-cristal.png"
+dest_files=["res://.godot/imported/Plateforme-cristal.png-74f4cbd3287a59a168e8105c648c1694.ctex"]
 
 [params]
 

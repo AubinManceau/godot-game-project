@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gim53fvcuxiw"
-path="res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"
+uid="uid://co4jkoehf7uet"
+path="res://.godot/imported/Plateforme-bois-invisible.png-35f9b8a66f81ff89f021073f7c51d37d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Move1.png"
-dest_files=["res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"]
+source_file="res://sprites/Plateforme-bois-invisible.png"
+dest_files=["res://.godot/imported/Plateforme-bois-invisible.png-35f9b8a66f81ff89f021073f7c51d37d.ctex"]
 
 [params]
 

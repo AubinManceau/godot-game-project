@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://igdm51d22ct1"]
+
+[ext_resource type="Texture2D" uid="uid://ksmhwmnpwapc" path="res://sprites/Plateforme-cristal-invisible.png" id="1_hta0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wnmlp"]
+
+[node name="Plateform2_transparent" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(399, -100)
+mesh = SubResource("QuadMesh_wnmlp")
+texture = ExtResource("1_hta0g")

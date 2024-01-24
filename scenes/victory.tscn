@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqao2mw2fphq7"]
+
+[ext_resource type="Script" path="res://scripts/victory.gd" id="1_p0qmw"]
+
+[node name="Victory" type="CanvasLayer"]
+script = ExtResource("1_p0qmw")
+
+[node name="retry" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.297
+anchor_top = 0.11
+anchor_right = 0.424
+anchor_bottom = 0.157
+offset_left = -0.144012
+offset_top = -0.280006
+offset_right = -0.448029
+offset_bottom = 0.264
+text = "Bien joué, rejouer"
+
+[node name="quit" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.341
+anchor_top = 0.27
+anchor_right = 0.378
+anchor_bottom = 0.318
+offset_left = 0.167969
+offset_top = 0.0399933
+offset_right = -0.456024
+offset_bottom = -0.0640106
+text = "Quit"
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

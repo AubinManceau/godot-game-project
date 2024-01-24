@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dn2ek53bct86f"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ud24k"]
-[ext_resource type="Texture2D" uid="uid://d1hi8foafa4pc" path="res://sprites/Idle.png" id="2_fth63"]
-[ext_resource type="Texture2D" uid="uid://b70yql1sw78rv" path="res://sprites/Jump.png" id="3_p6b5x"]
-[ext_resource type="Texture2D" uid="uid://e6csluq7t824" path="res://sprites/Move1.png" id="4_w4rxi"]
-[ext_resource type="Texture2D" uid="uid://di2yp648rwq5v" path="res://sprites/Move2.png" id="5_psmbi"]
+[ext_resource type="Texture2D" uid="uid://bygwxrge2weht" path="res://sprites/Idle.png" id="2_fth63"]
+[ext_resource type="Texture2D" uid="uid://dfslawkugojmf" path="res://sprites/Jump.png" id="3_p6b5x"]
+[ext_resource type="Texture2D" uid="uid://gim53fvcuxiw" path="res://sprites/Move1.png" id="4_w4rxi"]
+[ext_resource type="Texture2D" uid="uid://2j7kb2fsd2qu" path="res://sprites/Move2.png" id="5_psmbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm6tg"]
 size = Vector2(105, 189)
@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Move",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -49,4 +49,5 @@ shape = SubResource("RectangleShape2D_pm6tg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -112)
 sprite_frames = SubResource("SpriteFrames_aia73")
-animation = &"Jump"
+animation = &"Move"
+frame_progress = 0.0613856

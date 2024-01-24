@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gim53fvcuxiw"
-path="res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"
+uid="uid://b2bl16ie1rgof"
+path="res://.godot/imported/WELCOME TO FOND.png-81553357aa8893029099cf92423d9e13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Move1.png"
-dest_files=["res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"]
+source_file="res://sprites/WELCOME TO FOND.png"
+dest_files=["res://.godot/imported/WELCOME TO FOND.png-81553357aa8893029099cf92423d9e13.ctex"]
 
 [params]
 

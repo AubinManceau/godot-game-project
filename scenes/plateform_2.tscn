@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://df7ud7k2iisxp"]
+
+[ext_resource type="Texture2D" uid="uid://dvix8g5yh0o82" path="res://sprites/Plateforme-cristal.png" id="1_surjk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ag0gg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl2u0"]
+size = Vector2(400, 100)
+
+[node name="Plateform2" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(399, -100)
+mesh = SubResource("QuadMesh_ag0gg")
+texture = ExtResource("1_surjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tl2u0")

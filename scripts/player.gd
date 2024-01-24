@@ -1,22 +1,25 @@
 extends CharacterBody2D
 
-@export var speed = 500
+@export var speed = 700
 @export var gravity = 60
 @export var jump_force = 1300
 
 var animated_sprite
-var initial_position: Vector2
+signal player_is_dead
+signal player_win
 
 func _ready():
 	animated_sprite = $AnimatedSprite2D
-	initial_position = global_position
+
+func start(pos):
+	position = pos
 
 func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += gravity
 		if velocity.y > 2500:
 			velocity.y = 2500
-			global_position = initial_position
+			death()
 
 	if Input.is_action_just_pressed("Jump"):
 		if is_on_floor():
@@ -44,3 +47,9 @@ func _physics_process(delta):
 		animated_sprite.play("Jump")
 	else:
 		animated_sprite.play("Idle")
+
+func death():
+	player_is_dead.emit()
+	
+func win():
+	player_win.emit()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gim53fvcuxiw"
-path="res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"
+uid="uid://c25asnprc8i44"
+path="res://.godot/imported/GAME OVER FOND.png-d88cd97e97c98b2d31a0c30ace866e8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Move1.png"
-dest_files=["res://.godot/imported/Move1.png-fb60bc7a83c664d6700765858eef7360.ctex"]
+source_file="res://sprites/GAME OVER FOND.png"
+dest_files=["res://.godot/imported/GAME OVER FOND.png-d88cd97e97c98b2d31a0c30ace866e8b.ctex"]
 
 [params]
 

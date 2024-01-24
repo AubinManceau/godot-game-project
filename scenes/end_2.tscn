@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv0ifkff4nnkc"]
+
+[ext_resource type="Texture2D" uid="uid://7ahxn8nskx1i" path="res://sprites/End-dimension.png" id="1_6e8aq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ic6ev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhq3s"]
+size = Vector2(1.00151, 0.728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88t3m"]
+size = Vector2(20, 575)
+
+[node name="End2" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-332, 125)
+scale = Vector2(663, -500)
+mesh = SubResource("QuadMesh_ic6ev")
+texture = ExtResource("1_6e8aq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-332, 193)
+scale = Vector2(663, -500)
+shape = SubResource("RectangleShape2D_mhq3s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(10, -276.5)
+shape = SubResource("RectangleShape2D_88t3m")

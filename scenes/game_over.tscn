@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtbsfo2qrebbw"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ckrqg"]
+[ext_resource type="Texture2D" uid="uid://bar1rwckiyyv0" path="res://sprites/BOUTONSIMPLE.png" id="2_5g3f0"]
+[ext_resource type="Texture2D" uid="uid://bubucj6uv3wfe" path="res://sprites/BOUTONSIMPLEfonce.png" id="3_xhocp"]
+[ext_resource type="FontFile" uid="uid://c8v2vvp30vywa" path="res://fonts/BMarmy.TTF" id="4_whwuh"]
+[ext_resource type="Texture2D" uid="uid://c25asnprc8i44" path="res://sprites/GAME OVER FOND.png" id="5_fk2ns"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7gsc"]
+texture = ExtResource("2_5g3f0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggy74"]
+texture = ExtResource("3_xhocp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_byas4"]
+texture = ExtResource("3_xhocp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rio30"]
+texture = ExtResource("2_5g3f0")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_txx11"]
+load_path = "res://.godot/imported/BOUTONSIMPLEfonce.png-99906c0d7e6c1197f90d900c0f1b386d.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0eojn"]
+texture = SubResource("CompressedTexture2D_txx11")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sput0"]
+texture = SubResource("CompressedTexture2D_txx11")
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_ckrqg")
+
+[node name="retry" type="Button" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.503
+anchor_right = 0.626
+anchor_bottom = 0.687
+offset_left = -0.392029
+offset_top = 0.0559998
+offset_right = 11.848
+offset_bottom = -4.17599
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_whwuh")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_q7gsc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ggy74")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_byas4")
+text = "RESTART"
+
+[node name="quit" type="Button" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.366
+anchor_top = 0.713
+anchor_right = 0.632
+anchor_bottom = 0.89
+offset_left = 5.36801
+offset_top = -0.0239868
+offset_right = 4.93597
+offset_bottom = 0.280029
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_whwuh")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_rio30")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0eojn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sput0")
+text = "QUIT"
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_fk2ns")
+expand_mode = 1
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

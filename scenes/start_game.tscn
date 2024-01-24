@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://qg7s1l4b7w5a"]
+
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="1_pqjv7"]
+[ext_resource type="FontFile" uid="uid://c8v2vvp30vywa" path="res://fonts/BMarmy.TTF" id="2_knc5d"]
+[ext_resource type="Texture2D" uid="uid://b2bl16ie1rgof" path="res://sprites/WELCOME TO FOND.png" id="2_tl21x"]
+[ext_resource type="Texture2D" uid="uid://bar1rwckiyyv0" path="res://sprites/BOUTONSIMPLE.png" id="2_utk1o"]
+[ext_resource type="Texture2D" uid="uid://bubucj6uv3wfe" path="res://sprites/BOUTONSIMPLEfonce.png" id="4_ggk01"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ifjt"]
+texture = ExtResource("2_utk1o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udwu4"]
+texture = ExtResource("4_ggk01")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41jpl"]
+texture = ExtResource("4_ggk01")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbslt"]
+texture = ExtResource("2_utk1o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xapug"]
+texture = ExtResource("4_ggk01")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mthoo"]
+texture = ExtResource("4_ggk01")
+
+[node name="StartGame" type="CanvasLayer"]
+script = ExtResource("1_pqjv7")
+
+[node name="start" type="Button" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.503
+anchor_right = 0.636
+anchor_bottom = 0.681
+offset_left = -0.392029
+offset_top = 0.0559998
+offset_right = 0.327942
+offset_bottom = -0.288025
+theme_override_fonts/font = ExtResource("2_knc5d")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ifjt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_udwu4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_41jpl")
+text = "START"
+
+[node name="quit" type="Button" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.713
+anchor_right = 0.636
+anchor_bottom = 0.89
+offset_left = -0.392029
+offset_top = -0.0240479
+offset_right = 0.327942
+offset_bottom = 0.279968
+theme_override_fonts/font = ExtResource("2_knc5d")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_pbslt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xapug")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mthoo")
+text = "QUIT"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_tl21x")
+expand_mode = 1
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
