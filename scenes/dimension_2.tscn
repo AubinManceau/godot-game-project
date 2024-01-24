@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://fgl4x484ydwt" path="res://scenes/start_2.tscn" id="1_3kkmv"]
 [ext_resource type="PackedScene" uid="uid://cwda3mdcgp671" path="res://scenes/background_2.tscn" id="1_e0gpw"]
 [ext_resource type="PackedScene" uid="uid://df7ud7k2iisxp" path="res://scenes/plateform_2.tscn" id="2_el6y7"]
+[ext_resource type="PackedScene" uid="uid://dex1ykia72oe2" path="res://scenes/plateform_transparent.tscn" id="2_vtvkp"]
 [ext_resource type="PackedScene" uid="uid://dv0ifkff4nnkc" path="res://scenes/end_2.tscn" id="3_edgyk"]
-[ext_resource type="PackedScene" uid="uid://igdm51d22ct1" path="res://scenes/plateform_2_transparent.tscn" id="3_fbmia"]
 [ext_resource type="Shader" path="res://glitch_effect.gdshader" id="5_fx5a1"]
 
 [sub_resource type="GDScript" id="GDScript_tqcse"]
@@ -29,20 +29,20 @@ script = SubResource("GDScript_tqcse")
 [node name="Start2" parent="." instance=ExtResource("1_3kkmv")]
 position = Vector2(0, 583)
 
-[node name="Plateform2" parent="." instance=ExtResource("2_el6y7")]
+[node name="Plateform_transparent" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(917, 702)
 
-[node name="Plateform2_transparent" parent="." instance=ExtResource("3_fbmia")]
-position = Vector2(3078, 564)
-
-[node name="Plateform3" parent="." instance=ExtResource("2_el6y7")]
+[node name="Plateform_transparent3" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(1545, 507)
 
-[node name="Plateform4" parent="." instance=ExtResource("2_el6y7")]
+[node name="Plateform_transparent2" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(2335, 635)
 
+[node name="Plateform2" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(2988, 404)
+
 [node name="End2" parent="." instance=ExtResource("3_edgyk")]
-position = Vector2(5300, 470)
+position = Vector2(4200, 470)
 
 [node name="Background2" parent="." instance=ExtResource("1_e0gpw")]
 metadata/_edit_lock_ = true

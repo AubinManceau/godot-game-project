@@ -1,17 +1,30 @@
 extends Node2D
 
+var dimension1_scene = preload("res://scenes/dimension_1.tscn")
+var dimension2_scene = preload("res://scenes/dimension_2.tscn")
+
+var dimension1_instance = null
+var dimension2_instance = null
+
+var isDimension1Active = true
+
 func _ready():
 	new_game()
-	$Dimension2.hide()
-	
+	dimension1_instance = dimension1_scene.instantiate()
+	add_child(dimension1_instance)
+
 func _process(delta):
 	if Input.is_action_just_pressed("Switch"):
-		if $Dimension1.is_visible():
-			$Dimension1.hide()
-			$Dimension2.show()
-		elif $Dimension2.is_visible():
-			$Dimension2.hide()
-			$Dimension1.show()
+		if isDimension1Active:
+			dimension1_instance.queue_free()
+			dimension2_instance = dimension2_scene.instantiate()
+			add_child(dimension2_instance)
+			isDimension1Active = false
+		else:
+			dimension2_instance.queue_free()
+			dimension1_instance = dimension1_scene.instantiate()
+			add_child(dimension1_instance)
+			isDimension1Active = true
 
 func new_game():
 	$Player.start($StartPosition.position)

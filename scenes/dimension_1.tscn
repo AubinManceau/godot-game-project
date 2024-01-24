@@ -2,17 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://cx8ebix2uevlj" path="res://scenes/plateform.tscn" id="1_vfssi"]
 [ext_resource type="PackedScene" uid="uid://bb40ty3sboeux" path="res://scenes/start.tscn" id="2_1qljn"]
-[ext_resource type="PackedScene" uid="uid://dex1ykia72oe2" path="res://scenes/plateform_transparent.tscn" id="2_614m3"]
 [ext_resource type="PackedScene" uid="uid://dd1u67h45smoj" path="res://scenes/end.tscn" id="3_rc1xl"]
+[ext_resource type="PackedScene" uid="uid://igdm51d22ct1" path="res://scenes/plateform_2_transparent.tscn" id="3_ys4f5"]
 [ext_resource type="PackedScene" uid="uid://bhkb6qx2ki5e3" path="res://scenes/background.tscn" id="4_kyrw4"]
 
 [node name="Dimension1" type="Node2D"]
 
+[node name="Start1" parent="." instance=ExtResource("2_1qljn")]
+
 [node name="PlateformO" parent="." instance=ExtResource("1_vfssi")]
 position = Vector2(917, 702)
-
-[node name="Plateform_transparent" parent="." instance=ExtResource("2_614m3")]
-position = Vector2(2780, 404)
 
 [node name="PlateformO1" parent="." instance=ExtResource("1_vfssi")]
 position = Vector2(1545, 507)
@@ -20,9 +19,10 @@ position = Vector2(1545, 507)
 [node name="PlateformO2" parent="." instance=ExtResource("1_vfssi")]
 position = Vector2(2335, 635)
 
-[node name="Start1" parent="." instance=ExtResource("2_1qljn")]
+[node name="Plateform2_transparent" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(2988, 404)
 
 [node name="End1" parent="." instance=ExtResource("3_rc1xl")]
-position = Vector2(3705, 470)
+position = Vector2(4200, 470)
 
 [node name="Background1" parent="." instance=ExtResource("4_kyrw4")]
