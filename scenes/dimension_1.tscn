@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5vewe7ye8nki"]
+[gd_scene load_steps=7 format=3 uid="uid://5vewe7ye8nki"]
 
 [ext_resource type="PackedScene" uid="uid://cx8ebix2uevlj" path="res://scenes/plateform.tscn" id="1_vfssi"]
 [ext_resource type="PackedScene" uid="uid://bb40ty3sboeux" path="res://scenes/start.tscn" id="2_1qljn"]
 [ext_resource type="PackedScene" uid="uid://dd1u67h45smoj" path="res://scenes/end.tscn" id="3_rc1xl"]
+[ext_resource type="PackedScene" uid="uid://dt1yc5r4cgp7b" path="res://scenes/checkpoint_o.tscn" id="3_vb7e8"]
 [ext_resource type="PackedScene" uid="uid://igdm51d22ct1" path="res://scenes/plateform_2_transparent.tscn" id="3_ys4f5"]
 [ext_resource type="PackedScene" uid="uid://bhkb6qx2ki5e3" path="res://scenes/background.tscn" id="4_kyrw4"]
 
@@ -13,8 +14,7 @@
 [node name="PlateformO" parent="." instance=ExtResource("1_vfssi")]
 position = Vector2(917, 702)
 
-[node name="PlateformO1" parent="." instance=ExtResource("1_vfssi")]
-position = Vector2(1545, 507)
+[node name="CheckpointO" parent="." instance=ExtResource("3_vb7e8")]
 
 [node name="PlateformO2" parent="." instance=ExtResource("1_vfssi")]
 position = Vector2(2335, 635)

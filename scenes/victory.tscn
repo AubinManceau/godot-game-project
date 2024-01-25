@@ -1,33 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqao2mw2fphq7"]
+[gd_scene load_steps=12 format=3 uid="uid://cqao2mw2fphq7"]
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_p0qmw"]
+[ext_resource type="FontFile" uid="uid://c8v2vvp30vywa" path="res://fonts/BMarmy.TTF" id="2_gb5do"]
+[ext_resource type="Texture2D" uid="uid://bar1rwckiyyv0" path="res://sprites/BOUTONSIMPLE.png" id="3_wxijg"]
+[ext_resource type="Texture2D" uid="uid://bubucj6uv3wfe" path="res://sprites/BOUTONSIMPLEfonce.png" id="4_qknil"]
+[ext_resource type="Texture2D" uid="uid://cefvljyig1627" path="res://sprites/you win page.png" id="5_l5yhj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxnsi"]
+texture = ExtResource("3_wxijg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vq1n3"]
+texture = ExtResource("4_qknil")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3itng"]
+texture = ExtResource("4_qknil")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpq10"]
+texture = ExtResource("3_wxijg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jft7g"]
+texture = ExtResource("4_qknil")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2x34f"]
+texture = ExtResource("4_qknil")
 
 [node name="Victory" type="CanvasLayer"]
 script = ExtResource("1_p0qmw")
 
 [node name="retry" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.297
-anchor_top = 0.11
-anchor_right = 0.424
-anchor_bottom = 0.157
-offset_left = -0.144012
-offset_top = -0.280006
-offset_right = -0.448029
-offset_bottom = 0.264
-text = "Bien joué, rejouer"
+anchor_left = 0.214
+anchor_top = 0.687
+anchor_right = 0.479
+anchor_bottom = 0.864
+offset_left = -0.52803
+offset_top = -0.176025
+offset_right = 0.192078
+offset_bottom = 0.127991
+theme_override_fonts/font = ExtResource("2_gb5do")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_hxnsi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vq1n3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3itng")
+text = "RESTART"
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.341
-anchor_top = 0.27
-anchor_right = 0.378
-anchor_bottom = 0.318
-offset_left = 0.167969
-offset_top = 0.0399933
-offset_right = -0.456024
-offset_bottom = -0.0640106
-text = "Quit"
+anchor_left = 0.521
+anchor_top = 0.687
+anchor_right = 0.786
+anchor_bottom = 0.864
+offset_left = -0.192017
+offset_top = -0.176025
+offset_right = 0.527954
+offset_bottom = 0.127991
+theme_override_fonts/font = ExtResource("2_gb5do")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_wpq10")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jft7g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2x34f")
+text = "QUIT"
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_l5yhj")
+expand_mode = 1
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

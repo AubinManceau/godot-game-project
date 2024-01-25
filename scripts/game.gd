@@ -28,9 +28,3 @@ func _process(delta):
 
 func new_game():
 	$Player.start($StartPosition.position)
-
-func game_over():
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	
-func on_win():
-	get_tree().change_scene_to_file("res://scenes/victory.tscn")

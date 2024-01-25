@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8en4e75u42c6"]
+[gd_scene load_steps=11 format=3 uid="uid://8en4e75u42c6"]
 
 [ext_resource type="PackedScene" uid="uid://fgl4x484ydwt" path="res://scenes/start_2.tscn" id="1_3kkmv"]
 [ext_resource type="PackedScene" uid="uid://cwda3mdcgp671" path="res://scenes/background_2.tscn" id="1_e0gpw"]
@@ -6,14 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dex1ykia72oe2" path="res://scenes/plateform_transparent.tscn" id="2_vtvkp"]
 [ext_resource type="PackedScene" uid="uid://dv0ifkff4nnkc" path="res://scenes/end_2.tscn" id="3_edgyk"]
 [ext_resource type="Shader" path="res://glitch_effect.gdshader" id="5_fx5a1"]
+[ext_resource type="Texture2D" uid="uid://n3xkhecl1ykw" path="res://sprites/Checkpoint-dimension.png" id="6_dloje"]
 
-[sub_resource type="GDScript" id="GDScript_tqcse"]
-script/source = "extends Node2D
+[sub_resource type="QuadMesh" id="QuadMesh_vt4t0"]
 
-func switched():
-	$Bug
-	$SwitchBug
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euh1v"]
+size = Vector2(378, 374)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nsxop"]
 shader = ExtResource("5_fx5a1")
@@ -24,7 +22,6 @@ shader_parameter/shake_block_size = 10.0
 shader_parameter/shake_color_rate = 0.004
 
 [node name="Dimension2" type="Node2D"]
-script = SubResource("GDScript_tqcse")
 
 [node name="Start2" parent="." instance=ExtResource("1_3kkmv")]
 position = Vector2(0, 583)
@@ -32,8 +29,17 @@ position = Vector2(0, 583)
 [node name="Plateform_transparent" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(917, 702)
 
-[node name="Plateform_transparent3" parent="." instance=ExtResource("2_vtvkp")]
-position = Vector2(1545, 507)
+[node name="Checkpoint1" type="StaticBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Checkpoint1"]
+position = Vector2(1588, 627.875)
+scale = Vector2(377.5, -569.75)
+mesh = SubResource("QuadMesh_vt4t0")
+texture = ExtResource("6_dloje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1"]
+position = Vector2(1588, 726)
+shape = SubResource("RectangleShape2D_euh1v")
 
 [node name="Plateform_transparent2" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(2335, 635)

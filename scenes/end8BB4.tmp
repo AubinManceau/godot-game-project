@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd1u67h45smoj"]
+[gd_scene load_steps=11 format=3 uid="uid://dd1u67h45smoj"]
 
 [ext_resource type="Texture2D" uid="uid://o26f7huk5rue" path="res://sprites/level-design-end-06.png" id="1_ikcyp"]
 [ext_resource type="Texture2D" uid="uid://c4c5s45sd1cvl" path="res://sprites/0.png" id="2_1wrah"]
@@ -35,10 +35,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u5yei"]
-radius = 57.0
-height = 140.0
-
 [node name="End" type="StaticBody2D"]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
@@ -56,16 +52,10 @@ shape = SubResource("RectangleShape2D_qw0rb")
 position = Vector2(5, -274.5)
 shape = SubResource("RectangleShape2D_mxk5m")
 
-[node name="Cristal" type="Area2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("2_r86ct")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cristal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(-253, -206)
 sprite_frames = SubResource("SpriteFrames_okpbo")
-frame_progress = 0.677432
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cristal"]
-position = Vector2(-256, -208)
-shape = SubResource("CapsuleShape2D_u5yei")
-
-[connection signal="body_entered" from="Cristal" to="Cristal" method="_on_body_entered"]
+frame_progress = 0.25257

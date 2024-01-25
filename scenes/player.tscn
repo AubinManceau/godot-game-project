@@ -39,14 +39,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ud24k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(3.5, -94.5)
 shape = SubResource("RectangleShape2D_pm6tg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 position = Vector2(0, -112)
 sprite_frames = SubResource("SpriteFrames_aia73")
 animation = &"Move"

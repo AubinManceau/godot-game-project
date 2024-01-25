@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv0ifkff4nnkc"]
+[gd_scene load_steps=12 format=3 uid="uid://dv0ifkff4nnkc"]
 
 [ext_resource type="Texture2D" uid="uid://7ahxn8nskx1i" path="res://sprites/End-dimension.png" id="1_6e8aq"]
+[ext_resource type="Texture2D" uid="uid://c4c5s45sd1cvl" path="res://sprites/0.png" id="2_c37sq"]
+[ext_resource type="Script" path="res://scripts/cristal.gd" id="2_fh8u3"]
+[ext_resource type="Texture2D" uid="uid://b5yxnsediqnlb" path="res://sprites/1.png" id="3_kugu8"]
+[ext_resource type="Texture2D" uid="uid://dstjtuki1injq" path="res://sprites/2.png" id="4_5gcit"]
+[ext_resource type="Texture2D" uid="uid://b5qjkgan266uj" path="res://sprites/3.png" id="5_v5qb6"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ic6ev"]
 
@@ -9,6 +14,30 @@ size = Vector2(1.00151, 0.728)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88t3m"]
 size = Vector2(20, 575)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7k8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c37sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kugu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5gcit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v5qb6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_023eb"]
+radius = 63.0
+height = 148.0
 
 [node name="End2" type="StaticBody2D"]
 
@@ -26,3 +55,16 @@ shape = SubResource("RectangleShape2D_mhq3s")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(10, -276.5)
 shape = SubResource("RectangleShape2D_88t3m")
+
+[node name="Cristal" type="Area2D" parent="."]
+script = ExtResource("2_fh8u3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cristal"]
+position = Vector2(-253, -206)
+sprite_frames = SubResource("SpriteFrames_g7k8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cristal"]
+position = Vector2(-256, -211)
+shape = SubResource("CapsuleShape2D_023eb")
+
+[connection signal="body_entered" from="Cristal" to="Cristal" method="_on_body_entered"]
