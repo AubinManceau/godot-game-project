@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_6ovc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdxnx"]
-size = Vector2(6016.5, 120)
+size = Vector2(68242.3, 120)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bfxwa")
@@ -24,7 +24,7 @@ script = ExtResource("2_6ovc8")
 [node name="DeadLine" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadLine"]
-position = Vector2(3006, 994)
+position = Vector2(34118.9, 994)
 shape = SubResource("RectangleShape2D_tdxnx")
 
 [connection signal="body_entered" from="DeadLine" to="Player" method="_on_dead_line_body_entered"]

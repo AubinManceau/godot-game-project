@@ -7,7 +7,7 @@ var player : CharacterBody2D = null
 func _ready():
 	player = get_node("/root/Game/Player")
 	if player:
-		checkpoint_position = position
+		checkpoint_position = global_position
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and player:

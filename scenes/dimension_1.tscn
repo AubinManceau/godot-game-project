@@ -12,17 +12,128 @@
 [node name="Start1" parent="." instance=ExtResource("2_1qljn")]
 
 [node name="PlateformO" parent="." instance=ExtResource("1_vfssi")]
-position = Vector2(917, 702)
-
-[node name="CheckpointO" parent="." instance=ExtResource("3_vb7e8")]
+position = Vector2(1080, 529)
 
 [node name="PlateformO2" parent="." instance=ExtResource("1_vfssi")]
-position = Vector2(2335, 635)
+position = Vector2(1933, 425)
+
+[node name="PlateformO3" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(2846, 667)
+
+[node name="PlateformO4" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(3683, 481)
+
+[node name="CheckpointO" parent="." instance=ExtResource("3_vb7e8")]
+position = Vector2(2945, -93)
+
+[node name="PlateformO5" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(5391, 625)
 
 [node name="Plateform2_transparent" parent="." instance=ExtResource("3_ys4f5")]
-position = Vector2(2988, 404)
+position = Vector2(6123, 422)
+
+[node name="Plateform2_transparent2" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(6865, 272)
+
+[node name="PlateformO6" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(7694, 275)
+
+[node name="CheckpointO2" parent="." instance=ExtResource("3_vb7e8")]
+position = Vector2(6902, -5)
+
+[node name="PlateformO7" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(9318, 642)
+
+[node name="Plateform2_transparent3" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(9418, 450)
+
+[node name="PlateformO8" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(10181, 326)
+
+[node name="Plateform2_transparent4" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(11157, 647)
+
+[node name="PlateformO9" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(12091, 650)
+
+[node name="Plateform2_transparent5" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(12625, 291)
+rotation = 1.5708
+
+[node name="Plateform2_transparent6" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(12990, 635)
+
+[node name="PlateformO10" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(13481, 319)
+rotation = 1.5708
+
+[node name="PlateformO11" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(13875, 624)
+rotation = -3.14159
+
+[node name="Plateform2_transparent7" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(14652, 449)
+
+[node name="Plateform2_transparent8" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(15425, 293)
+
+[node name="CheckpointO3" parent="." instance=ExtResource("3_vb7e8")]
+position = Vector2(14539, 120)
+
+[node name="PlateformO12" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(16941, 708)
+
+[node name="PlateformO15" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(17362, 411)
+rotation = 1.5708
+
+[node name="Plateform2_transparent9" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(17358, 708)
+
+[node name="PlateformO16" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(18189, 411)
+rotation = 1.5708
+
+[node name="PlateformO13" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(17771, 708)
+
+[node name="Plateform2_transparent10" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(18183, 708)
+
+[node name="PlateformO14" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(18597, 708)
+
+[node name="PlateformO17" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(19416, 573)
+
+[node name="Plateform2_transparent11" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(20162, 504)
+
+[node name="Plateform2_transparent12" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(20896, 389)
+
+[node name="PlateformO18" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(21756, 530)
+
+[node name="Plateform2_transparent13" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(22650, 530)
+
+[node name="PlateformO19" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(22650, 350)
+
+[node name="Plateform2_transparent14" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(22211, 247)
+rotation = 1.5708
+
+[node name="Plateform2_transparent15" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(23093, 67)
+rotation = 1.5708
+
+[node name="Plateform2_transparent16" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(23510, 350)
+rotation = -3.14159
 
 [node name="End1" parent="." instance=ExtResource("3_rc1xl")]
-position = Vector2(4200, 470)
+position = Vector2(24950, 470)
 
 [node name="Background1" parent="." instance=ExtResource("4_kyrw4")]

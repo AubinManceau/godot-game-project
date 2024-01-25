@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://8en4e75u42c6"]
+[gd_scene load_steps=13 format=3 uid="uid://8en4e75u42c6"]
 
 [ext_resource type="PackedScene" uid="uid://fgl4x484ydwt" path="res://scenes/start_2.tscn" id="1_3kkmv"]
 [ext_resource type="PackedScene" uid="uid://cwda3mdcgp671" path="res://scenes/background_2.tscn" id="1_e0gpw"]
 [ext_resource type="PackedScene" uid="uid://df7ud7k2iisxp" path="res://scenes/plateform_2.tscn" id="2_el6y7"]
 [ext_resource type="PackedScene" uid="uid://dex1ykia72oe2" path="res://scenes/plateform_transparent.tscn" id="2_vtvkp"]
 [ext_resource type="PackedScene" uid="uid://dv0ifkff4nnkc" path="res://scenes/end_2.tscn" id="3_edgyk"]
+[ext_resource type="Script" path="res://scripts/checkpoint.gd" id="4_ylon6"]
 [ext_resource type="Shader" path="res://glitch_effect.gdshader" id="5_fx5a1"]
 [ext_resource type="Texture2D" uid="uid://n3xkhecl1ykw" path="res://sprites/Checkpoint-dimension.png" id="6_dloje"]
 
@@ -12,6 +13,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euh1v"]
 size = Vector2(378, 374)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qewxq"]
+radius = 64.0
+height = 132.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nsxop"]
 shader = ExtResource("5_fx5a1")
@@ -27,9 +32,19 @@ shader_parameter/shake_color_rate = 0.004
 position = Vector2(0, 583)
 
 [node name="Plateform_transparent" parent="." instance=ExtResource("2_vtvkp")]
-position = Vector2(917, 702)
+position = Vector2(1080, 529)
+
+[node name="Plateform_transparent2" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(1933, 425)
+
+[node name="Plateform_transparent3" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(2846, 667)
+
+[node name="Plateform_transparent4" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(3683, 481)
 
 [node name="Checkpoint1" type="StaticBody2D" parent="."]
+position = Vector2(2945, -93)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Checkpoint1"]
 position = Vector2(1588, 627.875)
@@ -41,21 +56,169 @@ texture = ExtResource("6_dloje")
 position = Vector2(1588, 726)
 shape = SubResource("RectangleShape2D_euh1v")
 
-[node name="Plateform_transparent2" parent="." instance=ExtResource("2_vtvkp")]
-position = Vector2(2335, 635)
+[node name="Area2D" type="Area2D" parent="Checkpoint1"]
+position = Vector2(1588, 420)
+script = ExtResource("4_ylon6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1/Area2D"]
+position = Vector2(-1, 41)
+shape = SubResource("CapsuleShape2D_qewxq")
+
+[node name="Plateform_transparent5" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(5391, 625)
 
 [node name="Plateform2" parent="." instance=ExtResource("2_el6y7")]
-position = Vector2(2988, 404)
+position = Vector2(6123, 422)
+
+[node name="Plateform3" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(6865, 272)
+
+[node name="Plateform_transparent6" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(7694, 275)
+
+[node name="Checkpoint2" type="StaticBody2D" parent="."]
+position = Vector2(6902, -5)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Checkpoint2"]
+position = Vector2(1588, 627.875)
+scale = Vector2(377.5, -569.75)
+mesh = SubResource("QuadMesh_vt4t0")
+texture = ExtResource("6_dloje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2"]
+position = Vector2(1588, 726)
+shape = SubResource("RectangleShape2D_euh1v")
+
+[node name="Area2D" type="Area2D" parent="Checkpoint2"]
+position = Vector2(1588, 420)
+script = ExtResource("4_ylon6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2/Area2D"]
+position = Vector2(-1, 41)
+shape = SubResource("CapsuleShape2D_qewxq")
+
+[node name="Plateform_transparent7" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(9318, 642)
+
+[node name="Plateform4" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(9418, 450)
+
+[node name="Plateform_transparent8" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(10181, 326)
+
+[node name="Plateform5" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(11157, 647)
+
+[node name="Plateform_transparent9" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(12091, 650)
+
+[node name="Plateform6" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(12625, 291)
+rotation = 1.5708
+
+[node name="Plateform7" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(12990, 635)
+
+[node name="Plateform_transparent10" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(13481, 319)
+rotation = 1.5708
+
+[node name="Plateform_transparent11" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(13875, 624)
+rotation = -3.14159
+
+[node name="Plateform8" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(14652, 436)
+
+[node name="Plateform9" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(15425, 293)
+
+[node name="Checkpoint3" type="StaticBody2D" parent="."]
+position = Vector2(14539, 120)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Checkpoint3"]
+position = Vector2(1588, 627.875)
+scale = Vector2(377.5, -569.75)
+mesh = SubResource("QuadMesh_vt4t0")
+texture = ExtResource("6_dloje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3"]
+position = Vector2(1588, 726)
+shape = SubResource("RectangleShape2D_euh1v")
+
+[node name="Area2D" type="Area2D" parent="Checkpoint3"]
+position = Vector2(1588, 420)
+script = ExtResource("4_ylon6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3/Area2D"]
+position = Vector2(-1, 41)
+shape = SubResource("CapsuleShape2D_qewxq")
+
+[node name="Plateform_transparent12" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(16941, 708)
+
+[node name="Plateform_transparent13" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(17362, 411)
+rotation = 1.5708
+
+[node name="Plateform10" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(17358, 708)
+
+[node name="Plateform_transparent14" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(18189, 411)
+rotation = 1.5708
+
+[node name="Plateform_transparent15" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(17771, 708)
+rotation = -3.14159
+
+[node name="Plateform11" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(18183, 708)
+
+[node name="Plateform_transparent16" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(18597, 708)
+
+[node name="Plateform_transparent17" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(19416, 573)
+
+[node name="Plateform12" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(20162, 504)
+
+[node name="Plateform13" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(20896, 389)
+
+[node name="Plateform_transparent18" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(21756, 530)
+
+[node name="Plateform14" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(22650, 530)
+
+[node name="Plateform_transparent19" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(22650, 350)
+
+[node name="Plateform15" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(22211, 247)
+rotation = 1.5708
+
+[node name="Plateform16" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(23093, 67)
+rotation = 1.5708
+
+[node name="Plateform17" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(23510, 350)
+rotation = -3.14159
 
 [node name="End2" parent="." instance=ExtResource("3_edgyk")]
-position = Vector2(4200, 470)
+position = Vector2(24950, 470)
 
 [node name="Background2" parent="." instance=ExtResource("1_e0gpw")]
-metadata/_edit_lock_ = true
 
 [node name="Bug" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_nsxop")
 offset_top = -230.0
-offset_right = 5368.0
+offset_right = 27356.0
 offset_bottom = 826.0
+
+[connection signal="body_entered" from="Checkpoint1/Area2D" to="Checkpoint1/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint2/Area2D" to="Checkpoint2/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint3/Area2D" to="Checkpoint3/Area2D" method="_on_body_entered"]

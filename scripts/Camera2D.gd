@@ -7,7 +7,7 @@ func _ready():
 
 func _process(delta):
 	var start : float = 0
-	var end : float = 4200
+	var end : float = 24950
 	if player:
 			var min_x = start + get_viewport_rect().size.x / 2.0
 			var max_x = end - get_viewport_rect().size.x / 2.0

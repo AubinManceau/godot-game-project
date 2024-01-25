@@ -57,7 +57,6 @@ func checkpoint_activated(next_respawn):
 	
 func death():
 	var start_position = get_node('/root/Game/StartPosition').position
-	print(start_position)
 	if life > 1:
 		if player_pos_on_next_death == null:
 			global_position = start_position
