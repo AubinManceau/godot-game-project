@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt1yc5r4cgp7b"]
+[gd_scene load_steps=13 format=3 uid="uid://dt1yc5r4cgp7b"]
 
 [ext_resource type="Texture2D" uid="uid://drn8u8tel26ks" path="res://sprites/Checkpoint-overworld.png" id="1_cy5pm"]
 [ext_resource type="Script" path="res://scripts/checkpoint.gd" id="2_7qad0"]
+[ext_resource type="Texture2D" uid="uid://b5jo2sgpwwhkt" path="res://sprites/sprite_0.png" id="3_0eq3g"]
+[ext_resource type="Texture2D" uid="uid://8po8xsvckeig" path="res://sprites/sprite_1.png" id="4_d3yfq"]
+[ext_resource type="Texture2D" uid="uid://b4dfsb4ta46fk" path="res://sprites/sprite_2.png" id="5_uvr76"]
+[ext_resource type="Texture2D" uid="uid://byr50rg818paw" path="res://sprites/sprite_3.png" id="6_awgog"]
+[ext_resource type="Texture2D" uid="uid://ojiqw5q0tf2d" path="res://sprites/sprite_4.png" id="7_6w2l2"]
+[ext_resource type="Texture2D" uid="uid://c42co6foldo22" path="res://sprites/sprite_5.png" id="8_5hran"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_568vo"]
 
@@ -11,6 +17,32 @@ size = Vector2(378, 374)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ugbs7"]
 radius = 64.0
 height = 132.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8x6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0eq3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d3yfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uvr76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_awgog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6w2l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5hran")
+}],
+"loop": false,
+"name": &"activated",
+"speed": 5.0
+}]
 
 [node name="CheckpointO" type="StaticBody2D"]
 
@@ -32,4 +64,10 @@ script = ExtResource("2_7qad0")
 position = Vector2(-1, 41)
 shape = SubResource("CapsuleShape2D_ugbs7")
 
+[node name="Animation" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(3, -172)
+sprite_frames = SubResource("SpriteFrames_s8x6k")
+animation = &"activated"
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="animation_finished" from="Area2D/Animation" to="Area2D" method="hide_animation"]

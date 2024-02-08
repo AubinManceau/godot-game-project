@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5vewe7ye8nki"]
+[gd_scene load_steps=8 format=3 uid="uid://5vewe7ye8nki"]
 
 [ext_resource type="PackedScene" uid="uid://cx8ebix2uevlj" path="res://scenes/plateform.tscn" id="1_vfssi"]
 [ext_resource type="PackedScene" uid="uid://bb40ty3sboeux" path="res://scenes/start.tscn" id="2_1qljn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt1yc5r4cgp7b" path="res://scenes/checkpoint_o.tscn" id="3_vb7e8"]
 [ext_resource type="PackedScene" uid="uid://igdm51d22ct1" path="res://scenes/plateform_2_transparent.tscn" id="3_ys4f5"]
 [ext_resource type="PackedScene" uid="uid://bhkb6qx2ki5e3" path="res://scenes/background.tscn" id="4_kyrw4"]
+[ext_resource type="AudioStream" uid="uid://gap7gds3q65y" path="res://sounds/musique-overworld.mp3" id="7_58341"]
 
 [node name="Dimension1" type="Node2D"]
 
@@ -133,7 +134,105 @@ rotation = 1.5708
 position = Vector2(23510, 350)
 rotation = -3.14159
 
+[node name="CheckpointO4" parent="." instance=ExtResource("3_vb7e8")]
+position = Vector2(22752, -85)
+
+[node name="PlateformO20" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(25087, 307)
+
+[node name="Plateform2_transparent17" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(25087, 654)
+
+[node name="PlateformO21" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(25417, 59)
+rotation = 1.5708
+
+[node name="Plateform2_transparent18" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(25891, 654)
+rotation = 1.01407e-05
+
+[node name="PlateformO22" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(26302, 654)
+rotation = -3.14159
+
+[node name="Plateform2_transparent19" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(26712, 654)
+rotation = 2.02815e-05
+
+[node name="PlateformO23" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(27125, 654)
+
+[node name="Plateform2_transparent20" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(27535, 654)
+rotation = 4.05629e-05
+
+[node name="PlateformO24" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(27943, 654)
+
+[node name="PlateformO25" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(25892, 358)
+rotation = 1.5708
+
+[node name="PlateformO26" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(26710, 358)
+rotation = 1.5708
+
+[node name="PlateformO27" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(27535, 358)
+rotation = 1.5708
+
+[node name="Plateform2_transparent21" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(28750, 654)
+rotation = 8.11258e-05
+
+[node name="PlateformO28" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(28850, 474)
+rotation = -3.14159
+
+[node name="Plateform2_transparent22" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(28950, 294)
+rotation = 0.000162252
+
+[node name="PlateformO29" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(29050, 114)
+
+[node name="PlateformO30" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(30022, 571)
+
+[node name="Plateform2_transparent23" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(30460, 243)
+rotation = 1.5708
+
+[node name="Plateform2_transparent24" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(30895, 525)
+rotation = -3.14159
+
+[node name="PlateformO31" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(30895, 345)
+
+[node name="Plateform2_transparent25" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(31410, 66)
+rotation = 1.5708
+
+[node name="Plateform2_transparent26" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(31901, 345)
+
+[node name="PlateformO32" parent="." instance=ExtResource("1_vfssi")]
+position = Vector2(31901, 165)
+
+[node name="Plateform2_transparent27" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(32892, 454)
+
+[node name="Plateform2_transparent28" parent="." instance=ExtResource("3_ys4f5")]
+position = Vector2(32613, 197)
+rotation = 1.5708
+
 [node name="End1" parent="." instance=ExtResource("3_rc1xl")]
-position = Vector2(24950, 470)
+position = Vector2(34300, 470)
 
 [node name="Background1" parent="." instance=ExtResource("4_kyrw4")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_58341")
+volume_db = -5.0
+autoplay = true

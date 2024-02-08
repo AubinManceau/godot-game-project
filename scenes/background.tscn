@@ -210,3 +210,94 @@ offset_bottom = 820.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect18" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28639.0
+offset_top = -224.0
+offset_right = 30431.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect19" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30429.0
+offset_top = -224.0
+offset_right = 32221.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect20" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32219.0
+offset_top = -224.0
+offset_right = 34011.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect21" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34009.0
+offset_top = -224.0
+offset_right = 35801.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect22" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35799.0
+offset_top = -224.0
+offset_right = 37591.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect23" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37589.0
+offset_top = -224.0
+offset_right = 39381.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")
+
+[node name="TextureRect24" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39379.0
+offset_top = -224.0
+offset_right = 41171.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8hm0")

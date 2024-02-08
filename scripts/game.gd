@@ -20,6 +20,7 @@ func _process(delta):
 			dimension2_instance = dimension2_scene.instantiate()
 			add_child(dimension2_instance)
 			isDimension1Active = false
+			$Switch.play()
 		else:
 			dimension2_instance.queue_free()
 			dimension1_instance = dimension1_scene.instantiate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8en4e75u42c6"]
+[gd_scene load_steps=21 format=3 uid="uid://8en4e75u42c6"]
 
 [ext_resource type="PackedScene" uid="uid://fgl4x484ydwt" path="res://scenes/start_2.tscn" id="1_3kkmv"]
 [ext_resource type="PackedScene" uid="uid://cwda3mdcgp671" path="res://scenes/background_2.tscn" id="1_e0gpw"]
@@ -7,7 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dv0ifkff4nnkc" path="res://scenes/end_2.tscn" id="3_edgyk"]
 [ext_resource type="Script" path="res://scripts/checkpoint.gd" id="4_ylon6"]
 [ext_resource type="Shader" path="res://glitch_effect.gdshader" id="5_fx5a1"]
+[ext_resource type="Texture2D" uid="uid://b5jo2sgpwwhkt" path="res://sprites/sprite_0.png" id="5_t75vx"]
+[ext_resource type="Texture2D" uid="uid://8po8xsvckeig" path="res://sprites/sprite_1.png" id="6_8bhnl"]
 [ext_resource type="Texture2D" uid="uid://n3xkhecl1ykw" path="res://sprites/Checkpoint-dimension.png" id="6_dloje"]
+[ext_resource type="Texture2D" uid="uid://b4dfsb4ta46fk" path="res://sprites/sprite_2.png" id="7_u7bp5"]
+[ext_resource type="Texture2D" uid="uid://byr50rg818paw" path="res://sprites/sprite_3.png" id="8_d7gfd"]
+[ext_resource type="Texture2D" uid="uid://ojiqw5q0tf2d" path="res://sprites/sprite_4.png" id="9_eshrp"]
+[ext_resource type="AudioStream" uid="uid://hdnrpt0ocp38" path="res://sounds/musique-dimension.mp3" id="9_jm38x"]
+[ext_resource type="Texture2D" uid="uid://c42co6foldo22" path="res://sprites/sprite_5.png" id="10_dp2jj"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_vt4t0"]
 
@@ -17,6 +24,32 @@ size = Vector2(378, 374)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qewxq"]
 radius = 64.0
 height = 132.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fwcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t75vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8bhnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u7bp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d7gfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eshrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dp2jj")
+}],
+"loop": true,
+"name": &"activated",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nsxop"]
 shader = ExtResource("5_fx5a1")
@@ -64,6 +97,11 @@ script = ExtResource("4_ylon6")
 position = Vector2(-1, 41)
 shape = SubResource("CapsuleShape2D_qewxq")
 
+[node name="Animation" type="AnimatedSprite2D" parent="Checkpoint1/Area2D"]
+position = Vector2(3, -172)
+sprite_frames = SubResource("SpriteFrames_6fwcw")
+animation = &"activated"
+
 [node name="Plateform_transparent5" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(5391, 625)
 
@@ -96,6 +134,11 @@ script = ExtResource("4_ylon6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2/Area2D"]
 position = Vector2(-1, 41)
 shape = SubResource("CapsuleShape2D_qewxq")
+
+[node name="Animation" type="AnimatedSprite2D" parent="Checkpoint2/Area2D"]
+position = Vector2(3, -172)
+sprite_frames = SubResource("SpriteFrames_6fwcw")
+animation = &"activated"
 
 [node name="Plateform_transparent7" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(9318, 642)
@@ -154,6 +197,11 @@ script = ExtResource("4_ylon6")
 position = Vector2(-1, 41)
 shape = SubResource("CapsuleShape2D_qewxq")
 
+[node name="Animation" type="AnimatedSprite2D" parent="Checkpoint3/Area2D"]
+position = Vector2(3, -172)
+sprite_frames = SubResource("SpriteFrames_6fwcw")
+animation = &"activated"
+
 [node name="Plateform_transparent12" parent="." instance=ExtResource("2_vtvkp")]
 position = Vector2(16941, 708)
 
@@ -209,16 +257,139 @@ position = Vector2(23510, 350)
 rotation = -3.14159
 
 [node name="End2" parent="." instance=ExtResource("3_edgyk")]
-position = Vector2(24950, 470)
+position = Vector2(34300, 470)
+
+[node name="Checkpoint4" type="StaticBody2D" parent="."]
+position = Vector2(22752, -85)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Checkpoint4"]
+position = Vector2(1588, 627.875)
+scale = Vector2(377.5, -569.75)
+mesh = SubResource("QuadMesh_vt4t0")
+texture = ExtResource("6_dloje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4"]
+position = Vector2(1588, 726)
+shape = SubResource("RectangleShape2D_euh1v")
+
+[node name="Area2D" type="Area2D" parent="Checkpoint4"]
+position = Vector2(1588, 420)
+script = ExtResource("4_ylon6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4/Area2D"]
+position = Vector2(-1, 41)
+shape = SubResource("CapsuleShape2D_qewxq")
+
+[node name="Animation" type="AnimatedSprite2D" parent="Checkpoint4/Area2D"]
+position = Vector2(3, -172)
+sprite_frames = SubResource("SpriteFrames_6fwcw")
+animation = &"activated"
+
+[node name="Plateform_transparent20" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(25087, 307)
+
+[node name="Plateform18" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(25087, 654)
+
+[node name="Plateform_transparent21" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(25417, 59)
+rotation = 1.5708
+
+[node name="Plateform19" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(25891, 654)
+rotation = 1.01407e-05
+
+[node name="Plateform_transparent22" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(26302, 654)
+rotation = -3.14159
+
+[node name="Plateform20" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(26712, 654)
+rotation = 2.02815e-05
+
+[node name="Plateform_transparent23" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(27125, 654)
+
+[node name="Plateform21" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(27535, 654)
+rotation = 4.05629e-05
+
+[node name="Plateform_transparent24" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(27943, 654)
+
+[node name="Plateform_transparent25" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(25892, 358)
+rotation = 1.5708
+
+[node name="Plateform_transparent26" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(26710, 358)
+rotation = 1.5708
+
+[node name="Plateform_transparent27" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(27535, 358)
+rotation = 1.5708
+
+[node name="Plateform22" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(28750, 654)
+rotation = 8.11258e-05
+
+[node name="Plateform_transparent28" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(28850, 474)
+rotation = -3.14159
+
+[node name="Plateform23" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(28950, 294)
+rotation = 0.000162252
+
+[node name="Plateform_transparent29" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(29050, 114)
+
+[node name="Plateform_transparent30" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(30022, 571)
+
+[node name="Plateform24" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(30460, 243)
+rotation = 1.5708
+
+[node name="Plateform25" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(30895, 525)
+rotation = -3.14159
+
+[node name="Plateform_transparent31" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(30895, 345)
+
+[node name="Plateform26" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(31410, 66)
+rotation = 1.5708
+
+[node name="Plateform27" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(31901, 345)
+rotation = -3.14159
+
+[node name="Plateform_transparent32" parent="." instance=ExtResource("2_vtvkp")]
+position = Vector2(31901, 165)
+
+[node name="Plateform28" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(32892, 454)
+
+[node name="Plateform29" parent="." instance=ExtResource("2_el6y7")]
+position = Vector2(32613, 197)
+rotation = 1.5708
 
 [node name="Background2" parent="." instance=ExtResource("1_e0gpw")]
 
 [node name="Bug" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nsxop")
 offset_top = -230.0
-offset_right = 27356.0
+offset_right = 34446.0
 offset_bottom = 826.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_jm38x")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="body_entered" from="Checkpoint1/Area2D" to="Checkpoint1/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Checkpoint2/Area2D" to="Checkpoint2/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Checkpoint3/Area2D" to="Checkpoint3/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint4/Area2D" to="Checkpoint4/Area2D" method="_on_body_entered"]

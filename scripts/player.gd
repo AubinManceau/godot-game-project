@@ -9,11 +9,14 @@ signal player_win
 var life = 3
 var player_pos_on_next_death = null
 var next_respawn : Vector2
+var life_label : Label
 
 func _ready():
 	animated_sprite = $AnimatedSprite2D
 	player_pos_on_next_death == null
 	print(player_pos_on_next_death)
+	life_label = get_node('/root/Game/Camera2D/Life')
+	life_label.text = str(life)
 
 func start(pos):
 	position = pos
@@ -28,6 +31,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump"):
 		if is_on_floor():
 			velocity.y = -jump_force
+			$Saut.play()
 
 	var horizontal_direction = Input.get_action_strength("MoveRight") - Input.get_action_strength("MoveLeft")
 	velocity.x = speed * horizontal_direction
@@ -63,6 +67,7 @@ func death():
 		else:
 			global_position = player_pos_on_next_death
 		life -= 1
+		life_label.text = str(life)
 	else:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 

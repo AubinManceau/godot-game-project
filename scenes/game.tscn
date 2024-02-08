@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://8d05onbeci6i"]
+[gd_scene load_steps=8 format=3 uid="uid://8d05onbeci6i"]
 
 [ext_resource type="PackedScene" uid="uid://dn2ek53bct86f" path="res://scenes/player.tscn" id="1_03xt7"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bfxwa"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_6ovc8"]
+[ext_resource type="AudioStream" uid="uid://k3w5rb7nov1y" path="res://sounds/shifterpro.mp3" id="4_nb1se"]
+[ext_resource type="Texture2D" uid="uid://b2r3eg2q2aoi3" path="res://sprites/Heart (1).png" id="4_srbr0"]
+[ext_resource type="FontFile" uid="uid://c8v2vvp30vywa" path="res://fonts/BMarmy.TTF" id="5_7ox28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdxnx"]
-size = Vector2(68242.3, 120)
+size = Vector2(84883.3, 120)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bfxwa")
@@ -21,10 +24,28 @@ position = Vector2(225, 586)
 position = Vector2(576, 324)
 script = ExtResource("2_6ovc8")
 
+[node name="Hearth" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-886, -356)
+scale = Vector2(0.754464, 0.754464)
+texture = ExtResource("4_srbr0")
+
+[node name="Life" type="Label" parent="Camera2D"]
+offset_left = -832.0
+offset_top = -371.0
+offset_right = -792.0
+offset_bottom = -322.0
+theme_override_fonts/font = ExtResource("5_7ox28")
+theme_override_font_sizes/font_size = 45
+text = "3"
+
 [node name="DeadLine" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadLine"]
-position = Vector2(34118.9, 994)
+position = Vector2(42439.4, 994)
 shape = SubResource("RectangleShape2D_tdxnx")
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nb1se")
+volume_db = -5.0
 
 [connection signal="body_entered" from="DeadLine" to="Player" method="_on_dead_line_body_entered"]
